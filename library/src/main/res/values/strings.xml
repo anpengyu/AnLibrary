@@ -1,0 +1,18 @@
+<resources>
+    <string name="face_result">人脸识别出结果</string>
+    <string name="face_no_result">未检测到人脸</string>
+    <string name="face_no_result_toast">未识别出来结果，请重试</string>
+    <string name="log_save_call_record">保存通话记录</string>
+    <string name="call_time_one_minute">通话时间还有一分钟，请注意</string>
+    <string name="call_time_end">通话时间已达上限，请给别的同学留点时间吧</string>
+    <string name="log_start_face_recognition">打开人脸识别页面</string>
+    <!--    阿里云日志-->
+    <string name="log_install_apk">安装最新版APK</string>
+    <string name="log_video_to_voice">视频转语音</string>
+    <string name="log_reboot">手动重启设备</string>
+    <string name="log_app_upgrade">应用升级</string>
+    <string name="log_increment">增量更新</string>
+    <string name="log_full">全量更新</string>
+    <!--Toast-->
+    <string name="toast_no_student_data">本地无学生数据，请拨号打电话</string>
+</resources>

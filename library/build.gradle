@@ -1,0 +1,108 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+//def localProperties = new Properties()
+//def localPropertiesFile = rootProject.file('local.properties')
+//if (localPropertiesFile.exists()) {
+//    localPropertiesFile.withReader('UTF-8') { reader ->
+//        localProperties.load(reader)
+//    }
+//}
+//def flutterRoot = localProperties.getProperty('flutter.sdk')
+//if (flutterRoot == null) {
+//    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+//}
+//
+//def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+//if (flutterVersionCode == null) {
+//    flutterVersionCode = '1'
+//}
+//
+//def flutterVersionName = localProperties.getProperty('flutter.versionName')
+//if (flutterVersionName == null) {
+//    flutterVersionName = '1.0'
+//}
+//
+//apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        profile {
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    api(rootProject.ext.dependencies["appcompat-v7"]) {
+        exclude module: "support-v4"
+        exclude module: "support-annotations"
+    }
+    api rootProject.ext.dependencies["recyclerview"]
+    api rootProject.ext.dependencies["support-v4"]
+    api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["logger"]
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["rxjava2-android"]
+
+    api rootProject.ext.dependencies["gson"]
+    api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["logging-interceptor"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["adapter-rxjava2"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["rxlifecycle2"]
+    api rootProject.ext.dependencies["loading-view"]
+    api rootProject.ext.dependencies['junit']
+    api rootProject.ext.dependencies['test-junit']
+    api rootProject.ext.dependencies['test-espresso']
+    api rootProject.ext.dependencies['blankj-utilcode']
+    api rootProject.ext.dependencies['picasso']
+    api rootProject.ext.dependencies['lifecycle']
+
+    api rootProject.ext.dependencies["rxlifecycle-components"]
+    api rootProject.ext.dependencies["test-support-espresso"]
+    api rootProject.ext.dependencies['BaseRecyclerViewAdapterHelper']
+//    api rootProject.ext.dependencies["agora"]
+
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    api rootProject.ext.dependencies["avi"]
+    api rootProject.ext.dependencies["cockroach"]
+    api rootProject.ext.dependencies["core-ktx"]
+    //noinspection GradleDependency
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api rootProject.ext.dependencies['kotlin-stdlib']
+    api rootProject.ext.dependencies['design']
+    api rootProject.ext.dependencies['material']
+    api rootProject.ext.dependencies['anko']
+
+    api rootProject.ext.dependencies['okdownload']
+    api rootProject.ext.dependencies['okdownload-sqlite']
+    api rootProject.ext.dependencies['okdownload-okhttp']
+    api rootProject.ext.dependencies['okdownload-filedownloader']
+}
