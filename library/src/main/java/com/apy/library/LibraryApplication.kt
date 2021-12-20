@@ -1,7 +1,6 @@
 package com.apy.library
 
 import android.app.Application
-import com.apy.library.utils.UIUtils
 
 open class LibraryApplication : Application() {
 
@@ -10,7 +9,6 @@ open class LibraryApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        UIUtils.init(this)
     }
 
     companion object {

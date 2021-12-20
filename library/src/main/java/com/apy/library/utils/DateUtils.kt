@@ -32,19 +32,4 @@ class DateUtils {
         return (currentTime.timeInMillis - nativeTime.timeInMillis) / (1000 * 3600 * 24)
     }
 
-    /*
-    判读时间差距，两个时间相差多少天，时，分，秒
-     */
-    fun getDay(date: String?): Long? {
-        val df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        val now = df.parse(UIUtils.getDateTimeSecond()) //当前时间
-        val date = df.parse(date) //过去
-        val l = now.time - date.time
-        val day = l / (24 * 60 * 60 * 1000)
-        val hour = l / (60 * 60 * 1000) - day * 24
-        val min = l / (60 * 1000) - day * 24 * 60 - hour * 60
-        val s = l / 1000 - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60
-//        println("" + day + "天" + hour + "小时" + min + "分" + s + "秒")
-        return s
-    }
 }

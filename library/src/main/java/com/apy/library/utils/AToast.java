@@ -28,12 +28,7 @@ public class AToast {
 
     @SuppressLint("ShowToast")
     private static void showToast(String msg, int duration) {
-        HANDLER.post(() -> {
-            if(UIUtils.getContext()!=null){
-                Toast.makeText(UIUtils.getContext(), msg, duration).show();
-            }
 
-        });
     }
 
     public static void ToastMessage(Activity activity, String messages) {

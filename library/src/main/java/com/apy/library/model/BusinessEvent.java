@@ -1,7 +1,5 @@
 package com.apy.library.model;
 
-import com.apy.library.BaseActivity;
-
 /**
  * Created by Administrator on 2018/7/4.
  */

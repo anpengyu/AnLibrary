@@ -3,10 +3,9 @@ ext {
     isFirstApplication = false  //模块开关，false:作为Lib组件存在， true:作为application存在
 
     android = [
-            compileSdkVersion : 31,
-            buildToolsVersion : "28.0.3",
-            minSdkVersion     : 19,
-            targetSdkVersion  : 31,
+            compileSdk : 31,
+            minSdk     : 19,
+            targetSdk  : 31,
             versionCode       : 1,
             versionName       : "1.0.0",
     ]
