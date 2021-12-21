@@ -1,4 +1,4 @@
-package com.apy.anlibrary;
+package com.apy.anlibrary.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
