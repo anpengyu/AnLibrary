@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.apy.anlibrary.R;
-import com.apy.anlibrary.databinding.ActivityMainBinding;
+import com.apy.anlibrary.databinding.ActivityViewmodelBinding;
 import com.apy.anlibrary.livedata.LiveDataManager;
 import com.apy.library.net.base.BaseActivity;
 
@@ -21,7 +21,7 @@ public class ViewModelActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_viewmodel);
+        ActivityViewmodelBinding viewmodelBinding = DataBindingUtil.setContentView(this, R.layout.activity_viewmodel);
 
         ViewModelProvider.AndroidViewModelFactory factory = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
         ViewModelProvider viewModelProvider = new ViewModelProvider(this, factory);
@@ -34,7 +34,7 @@ public class ViewModelActivity extends BaseActivity {
                 Log.e("userResponse",userResponse.getResponse());
             }
         });
-        viewDataBinding.setMainViewmodel(mainViewModel);
+        viewmodelBinding.setMainViewmodel(mainViewModel);
 
         LiveDataManager.mutableLiveData.observe(this, new Observer<String>() {
             @Override

@@ -8,5 +8,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AnLibrary"
-include ':app'
+//include ':app'
 include ':library'
+include ':room_library'
