@@ -1,5 +1,7 @@
 package com.apy.anlibrary;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.multidex.MultiDex;
 
 import com.apy.library.LibraryApplication;
@@ -10,5 +12,7 @@ public class MyApplication extends LibraryApplication {
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
+
+
     }
 }
